@@ -24,7 +24,7 @@ public class Teleport2Me : IPlugin
 }
 
 
-public class Teleport2MeModule : ITargetChatCommand
+public class Teleport2MeCommand : ITargetChatCommand
 {
     public string Key => "tptome";
 
