@@ -44,7 +44,7 @@ public class Teleport2MeCommand : ITargetChatCommand
         var tileInfrontActor = actorRoomUser.SquareInFront;
         var itemsInfrontActor = room.GetRoomItemHandler().GetFurniObjects(tileInfrontActor.X, tileInfrontActor.Y);
 
-        if (target.Username == session.GetHabbo().Username) {
+        if (target == session.GetHabbo()) {
             session.SendWhisper("Get a life.");
             return Task.CompletedTask;
         }
