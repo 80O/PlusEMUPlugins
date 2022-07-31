@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Plus Emulator">
+			<HintPath>$(PLUS_EMULATOR_HOME)\Plus Emulator.dll</HintPath>
+			<Private>false</Private>
+			<ExcludeAssets>all</ExcludeAssets>
+		</Reference>
+	</ItemGroup>
+</Project>

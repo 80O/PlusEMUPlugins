@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginExample", "PluginExample\PluginExample.csproj", "{C7765F73-D336-47BB-99EF-133699D7F7B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teleport2Me", "Teleport2Me\Teleport2Me.csproj", "{9937D5C9-6B80-4ECE-BE8B-C3668EE35E1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C7765F73-D336-47BB-99EF-133699D7F7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7765F73-D336-47BB-99EF-133699D7F7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7765F73-D336-47BB-99EF-133699D7F7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9937D5C9-6B80-4ECE-BE8B-C3668EE35E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9937D5C9-6B80-4ECE-BE8B-C3668EE35E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9937D5C9-6B80-4ECE-BE8B-C3668EE35E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9937D5C9-6B80-4ECE-BE8B-C3668EE35E1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
