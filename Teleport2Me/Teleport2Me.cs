@@ -59,6 +59,26 @@ public class Teleport2MeCommand : ITargetChatCommand
             return Task.CompletedTask;
         }
         
+        switch (actorRoomUser.RotBody)
+        {
+            case 1:
+                tileInfrontActor.X += 1;
+                tileInfrontActor.Y -= 1;
+                break;
+            case 3:
+                tileInfrontActor.X += 1;
+                tileInfrontActor.Y += 1;
+                break;
+            case 5:
+                tileInfrontActor.X -= 1;
+                tileInfrontActor.Y += 1;
+                break;
+            case 7:
+                tileInfrontActor.X -= 1;
+                tileInfrontActor.Y -= 1;
+                break;
+        }
+        
         var ActorHasItemsInfront = room.GetRoomItemHandler().GetFurniObjects(tileInfrontActor.X, tileInfrontActor.Y).Count > 0;
         if (!room.GetGameMap().IsInMap(tileInfrontActor.X, tileInfrontActor.Y) && !ActorHasItemsInfront) {
             session.SendWhisper("The tile is invalid as it's outside the map.");
