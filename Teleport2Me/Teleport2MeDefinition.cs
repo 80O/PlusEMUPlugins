@@ -6,7 +6,7 @@ namespace Teleport2Me
     {
         public string Name => "Teleport2Me Plugin";
         public string Author => "Harb#9937";
-        public Version Version => new(1, 0, 0);
+        public Version Version => new(1, 0, 1);
         public Type PluginClass => typeof(Teleport2Me);
     }
 }
