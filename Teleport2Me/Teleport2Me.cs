@@ -42,7 +42,6 @@ public class Teleport2MeCommand : ITargetChatCommand
         var targetRoomUser = room.GetRoomUserManager().GetRoomUserByHabbo(target.Id);
 
         var tileInfrontActor = actorRoomUser.SquareInFront;
-        var itemsInfrontActor = room.GetRoomItemHandler().GetFurniObjects(tileInfrontActor.X, tileInfrontActor.Y);
 
         if (target == session.GetHabbo()) {
             session.SendWhisper("Get a life.");
@@ -59,11 +58,32 @@ public class Teleport2MeCommand : ITargetChatCommand
             return Task.CompletedTask;
         }
         
+        switch (actorRoomUser.RotBody)
+        {
+            case 1:
+                tileInfrontActor.X += 1;
+                tileInfrontActor.Y -= 1;
+                break;
+            case 3:
+                tileInfrontActor.X += 1;
+                tileInfrontActor.Y += 1;
+                break;
+            case 5:
+                tileInfrontActor.X -= 1;
+                tileInfrontActor.Y += 1;
+                break;
+            case 7:
+                tileInfrontActor.X -= 1;
+                tileInfrontActor.Y -= 1;
+                break;
+        }
+        
         if (!room.GetGameMap().ValidTile(tileInfrontActor.X, tileInfrontActor.Y)) {
             session.SendWhisper("The tile is invalid as it's outside the map.");
             return Task.CompletedTask;
         }
 
+        var itemsInfrontActor = room.GetRoomItemHandler().GetFurniObjects(tileInfrontActor.X, tileInfrontActor.Y);
         if (itemsInfrontActor.Count > 0 && parameters.Length == 0) {
             session.SendWhisper("Blocked by furniture. Force teleportation with - :tptome %target% force");
             return Task.CompletedTask;
