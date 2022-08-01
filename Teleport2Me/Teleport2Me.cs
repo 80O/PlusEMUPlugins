@@ -58,6 +58,11 @@ public class Teleport2MeCommand : ITargetChatCommand
             session.SendWhisper("Wrong syntax. Use :tp2me %target% (optionally) force");
             return Task.CompletedTask;
         }
+        
+        if (!room.GetGameMap().ValidTile(tileInfrontActor.X, tileInfrontActor.Y)) {
+            session.SendWhisper("The tile is invalid as it's outside the map.");
+            return Task.CompletedTask;
+        }
 
         if (itemsInfrontActor.Count > 0 && parameters.Length == 0) {
             session.SendWhisper("Blocked by furniture. Force teleportation with - :tptome %target% force");
